@@ -5,7 +5,7 @@ bin\windows\zookeeper-server-start.bat config\zookeeper.properties
 bin\windows\kafka-server-start.bat config\server.properties
 ### create topic
 bin\windows\kafka-topics.bat --zookeeper localhost:2181 --topic newTopic --create --partitions 3 --replication-factor 1
-### communicate:
+### communicate
 bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic name
 bin\windows\kafka-topic --zookeeper localhost:2181 --topic mytopic --describe
 
