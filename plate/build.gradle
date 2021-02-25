@@ -1,0 +1,35 @@
+plugins {
+	id 'org.springframework.boot' version '2.4.2'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+
+	id 'java'
+
+}
+
+group = 'com.possessor'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '15'
+
+
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.apache.kafka:kafka-streams'
+	implementation 'org.springframework.kafka:spring-kafka'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.kafka:spring-kafka-test'
+	annotationProcessor("org.projectlombok:lombok:1.18.16")
+	compileOnly("org.projectlombok:lombok:1.18.16")
+
+	compile 'org.junit.platform:junit-platform-commons:1.8.0-M1'
+}
+repositories {
+	mavenCentral()
+}
+
+compileJava {
+	options.compilerArgs += ["--enable-preview"]
+}
+test {
+	jvmArgs '--enable-preview'
+}
